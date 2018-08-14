@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/back"
+    android:scaleType="centerCrop"
+
+    tools:context=".MemberLoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:src="@mipmap/book" />
+
+        <EditText
+            android:id="@+id/title_field"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:hint="Title"
+            android:inputType=""
+            android:lines="1"
+            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/editextbackground"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/description_field"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Description"
+            android:inputType=""
+            android:lines="1"
+            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/editextbackground"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/author_field"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Author"
+            android:inputType=""
+            android:lines="1"
+            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/editextbackground"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/quantity_field"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Quantity"
+            android:inputType=""
+            android:lines="1"
+            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/editextbackground"
+            android:textColor="#000000" />
+
+        <EditText
+            android:id="@+id/rackNo_field"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Rack Number"
+            android:inputType=""
+            android:lines="1"
+            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
+            android:background="@drawable/editextbackground"
+            android:textColor="#000000" />
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/added_button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            fancy:fb_borderColor="#ffffff"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#A79987"
+            fancy:fb_focusColor="#ffffff"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="ADD"
+            fancy:fb_textColor="#FFFFFF" />
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/cancel_button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+
+            android:layout_marginTop="20dp"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            fancy:fb_borderColor="#ffffff"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_defaultColor="#A79987"
+            fancy:fb_focusColor="#ffffff"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="Cancel"
+            fancy:fb_textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
