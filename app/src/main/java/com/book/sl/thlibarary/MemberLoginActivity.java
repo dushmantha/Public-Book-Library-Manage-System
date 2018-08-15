@@ -48,11 +48,11 @@ public class MemberLoginActivity extends AppCompatActivity {
         if (!TextUtils.isEmpty(userName) && !TextUtils.isEmpty(pw)) {
 
             for (User user : users) {
-                if (user.isAdministrator() == true && user.getUserName().equals(userName) && user.getPassWord().equals(pw)) {
+                if (user.isAdministrator() == false && user.getUserName().equals(userName) && user.getPassWord().equals(pw)) {
                     Toast.makeText(this, "User Login Success", Toast.LENGTH_LONG).show();
                     LocalDataManager localDataManager = new LocalDataManager();
                     localDataManager.saveUserObject(user,this);
-                    Intent intent = new Intent(this, BookViewOrEditActivity.class);
+                    Intent intent = new Intent(this, HomeActivity.class);
                     startActivity(intent);
                 }
             }

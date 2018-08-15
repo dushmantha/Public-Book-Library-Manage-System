@@ -90,7 +90,6 @@ public class AdminLoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.cancel_button)
     public void cancel(View view) {
-        Intent intent = new Intent(this, BookViewOrEditActivity.class);
-        startActivity(intent);
+        finish();
     }
 }

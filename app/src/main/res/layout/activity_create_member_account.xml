@@ -27,6 +27,8 @@
             android:background="@drawable/editextbackground"
             android:hint="UserName"
             android:inputType=""
+            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
             android:lines="1"
             android:textColor="#000000" />
 
@@ -39,6 +41,8 @@
             android:layout_marginTop="10dp"
             android:hint="Email Or Phone Number"
             android:inputType=""
+            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
             android:lines="1"
             android:textColor="#000000" />
 
@@ -50,8 +54,10 @@
             android:background="@drawable/editextbackground"
             android:layout_marginTop="10dp"
             android:hint="Password"
-            android:inputType=""
+            android:inputType="textPassword"
             android:lines="1"
+            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
             android:textColor="#000000" />
 
 

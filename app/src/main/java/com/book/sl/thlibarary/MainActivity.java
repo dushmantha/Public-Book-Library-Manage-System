@@ -62,16 +62,6 @@ public class MainActivity extends AppCompatActivity {
 		startActivity(intent);
 	}
 
-//	@Subscribe(sticky = true)
-//	public void onEvent(
-//			Event.LoginActivity eventName) {
-//		EventBus.getDefault()
-//				.postSticky(new Event.LoginActivity(
-//						""));
-//		Intent intent = new Intent(this, MainActivity.class);
-//		startActivity(intent);
-//	}
-
 	@Override
 	protected void onStop() {
 		super.onStop();

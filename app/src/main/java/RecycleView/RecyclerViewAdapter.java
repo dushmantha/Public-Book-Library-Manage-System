@@ -54,20 +54,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(mContext, BookViewOrEditActivity.class);
-
                 // passing data to the book activity
-
                 intent.putExtra("book",mData.get(position));
                 // start the activity
                 mContext.startActivity(intent);
-
             }
         });
-
-
-
     }
 
     @Override
@@ -76,7 +69,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-
         TextView tv_book_title;
         ImageView img_book_thumbnail;
         CardView cardView ;

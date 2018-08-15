@@ -7,6 +7,22 @@
     tools:context=".HomeActivity"
     android:background="@mipmap/back"
     android:scaleType = "centerCrop">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+    <SearchView
+        android:id="@+id/simpleSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search here" />
+
+    
+</RelativeLayout>
+
+
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -16,9 +32,13 @@
         android:weightSum="1">
 
     <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="60dp"
         android:id="@+id/recyclerview_id"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
 
 </LinearLayout>
 </android.support.constraint.ConstraintLayout>

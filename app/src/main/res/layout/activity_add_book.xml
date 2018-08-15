@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:background="@mipmap/back"
     android:scaleType="centerCrop"
-
+    android:configChanges=
+        "keyboard|keyboardHidden|orientation|screenLayout|uiMode|smallestScreenSize"
     tools:context=".MemberLoginActivity">
 
     <LinearLayout

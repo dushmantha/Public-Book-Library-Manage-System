@@ -77,7 +77,6 @@ public class BookAddActivity extends AppCompatActivity {
             Book user = new Book(id, bookTitle, bookDescription, bookAuthor,bookQuantity,bookRackNo,coverImageUrl,"");
             databaseReference.child(id).setValue(user);
             Toast.makeText(this, "Book has being Added", Toast.LENGTH_LONG).show();
-
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
         } else {

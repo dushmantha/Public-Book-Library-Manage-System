@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.SearchView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -23,10 +24,10 @@ import java.util.List;
 import DataBase.Book;
 import RecycleView.RecyclerViewAdapter;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     private DatabaseReference databaseReference;
     private StorageReference storageReference;
-
+    RecyclerViewAdapter myAdapter;
     List<Book> lstBook;
 
     @Override
@@ -36,9 +37,6 @@ public class HomeActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("book");
         storageReference = FirebaseStorage.getInstance().getReference();
         lstBook = new ArrayList<>();
-
-
-
     }
 
     @Override
@@ -61,26 +59,35 @@ public class HomeActivity extends AppCompatActivity {
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception exception) {
-
                             // Handle any errors
                         }
                     });
                     lstBook.add(book);
                 }
             }
-
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
     }
 
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        String text = newText;
+        //myAdapter.filter(text);
+        return false;
+    }
+
     private void setValueToRecyclerView(){
         RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
-        RecyclerViewAdapter myAdapter = new RecyclerViewAdapter(this,lstBook);
+        myAdapter = new RecyclerViewAdapter(this,lstBook);
         myrv.setLayoutManager(new GridLayoutManager(this,3));
         myrv.setAdapter(myAdapter);
     }

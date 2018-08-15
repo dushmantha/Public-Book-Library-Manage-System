@@ -39,10 +39,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:hint="@string/password"
-            android:inputType=""
             android:lines="1"
             android:paddingLeft="15dp"
             android:paddingStart="15dp"
+            android:inputType="textPassword"
             android:background="@drawable/editextbackground"
             android:textColor="#000000" />
 

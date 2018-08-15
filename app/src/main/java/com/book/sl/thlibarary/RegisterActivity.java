@@ -1,5 +1,6 @@
 package com.book.sl.thlibarary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -11,6 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import DataBase.User;
+import LocalDataSave.LocalDataManager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -42,7 +44,11 @@ public class RegisterActivity extends AppCompatActivity {
             String id = databaseReference.push().getKey();
             User user = new User(id, userName, false, emailOrPhone,pw);
             databaseReference.child(id).setValue(user);
+            LocalDataManager localDataManager = new LocalDataManager();
+            localDataManager.saveUserObject(user, this);
             Toast.makeText(this, "User Register", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
         } else {
             Toast.makeText(this, "please fill your details", Toast.LENGTH_LONG).show();
         }
@@ -51,7 +57,6 @@ public class RegisterActivity extends AppCompatActivity {
     @OnClick(R.id.create_account_button)
     public void createAccount(View view) {
         addUser();
-        finish();
     }
 
     @OnClick(R.id.cancel_button)
