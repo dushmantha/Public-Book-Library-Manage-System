@@ -40,8 +40,19 @@
 		</activity>
 
 		<activity
-			android:name=".HomeActivity"
+		android:name=".HomeActivity"
+		android:theme="@style/AppTheme">
+		<intent-filter>
+			<action android:name="android.intent.action.MAIN" />
+		</intent-filter>
+	</activity>
+
+		<activity
+			android:name=".BookSearchActivity"
 			android:theme="@style/AppTheme.NoActionBar">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+			</intent-filter>
 		</activity>
 
 		<activity

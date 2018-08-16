@@ -8,19 +8,6 @@
     android:background="@mipmap/back"
     android:scaleType = "centerCrop">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="60dp">
-    <SearchView
-        android:id="@+id/simpleSearchView"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:iconifiedByDefault="false"
-        android:queryHint="Search here" />
-
-    
-</RelativeLayout>
-
 
 
     <LinearLayout

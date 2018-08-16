@@ -6,6 +6,7 @@
 		<item name="colorPrimary">@color/main_color</item>
 		<item name="colorPrimaryDark">@color/main_color</item>
 		<item name="colorAccent">@color/colorAccent</item>
+		<item name="android:actionBarSize">80dip</item>
 	</style>
 
 	<style name="AppTheme.NoActionBar">
@@ -19,4 +20,7 @@
 	<style name="AppTheme.AppBarOverlay" />
 
 	<style name="AppTheme.PopupOverlay"  />
+
+	<style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
 </resources>

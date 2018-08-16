@@ -51,4 +51,5 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
     implementation 'com.google.code.gson:gson:2.7'
 
+
 }

@@ -35,6 +35,7 @@ public class BookViewOrEditActivity extends AppCompatActivity {
     User user;
     Book book;
     private DatabaseReference databaseReference;
+    private DatabaseReference bookDatabaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class BookViewOrEditActivity extends AppCompatActivity {
         LocalDataManager localDataManager = new LocalDataManager();
         user = localDataManager.getUserObject(this);
         databaseReference = FirebaseDatabase.getInstance().getReference("cart");
+        bookDatabaseReference = FirebaseDatabase.getInstance().getReference("book");
         if (user == null){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
@@ -89,6 +91,17 @@ public class BookViewOrEditActivity extends AppCompatActivity {
 //               String formattedDate = df.format(date);
                Cart cart = new Cart(id,  book,  user, false, date, null);
                databaseReference.child(id).setValue(cart);
+               int number = 0;
+               try {
+                   number = Integer.parseInt(book.getQuantity()) - 1;
+               } catch(NumberFormatException e) {
+                   System.out.println("parse value is not valid : " + e);
+               }
+               try {
+                   bookDatabaseReference.child(book.getId()).child("quantity").setValue(String.valueOf(number));
+               } catch (Exception e) {
+                   e.printStackTrace();
+               }
                Toast.makeText(this, "Book has being reserved", Toast.LENGTH_LONG).show();
                Intent intent = new Intent(this, HomeActivity.class);
                startActivity(intent);
