@@ -48,10 +48,10 @@
                 android:id="@+id/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Animation | Drama | Adventure" />
+                android:text="" />
 
             <TextView
-                android:id="@+id/rating"
+                android:id="@+id/status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -62,11 +62,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/studio"
+                android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Studio" />
+                android:text="User Name" />
 
 
         </LinearLayout>

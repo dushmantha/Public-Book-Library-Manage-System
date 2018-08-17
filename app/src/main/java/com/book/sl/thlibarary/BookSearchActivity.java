@@ -1,5 +1,6 @@
 package com.book.sl.thlibarary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -47,6 +48,9 @@ public class BookSearchActivity  extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
             }
         });
+
+
+
     }
 
 
@@ -55,9 +59,11 @@ public class BookSearchActivity  extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onResume();
 
-        Bundle bundle = getIntent().getExtras();
-        bookArrayList = bundle.getParcelable("books");
+        Intent intent = getIntent();
+        bookArrayList = (ArrayList<Book>) intent
+                .getSerializableExtra("books");
         searchAdapter = new SearchAdapter(BookSearchActivity.this, bookArrayList);
         lvProducts.setAdapter(searchAdapter);
+
     }
 }

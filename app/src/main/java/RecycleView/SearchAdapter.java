@@ -1,16 +1,20 @@
 package RecycleView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.book.sl.thlibarary.BookViewOrEditActivity;
 import com.book.sl.thlibarary.R;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -45,33 +49,36 @@ public class SearchAdapter extends BaseAdapter implements Filterable {
 
     private class ViewHolder {
         LinearLayout llContainer;
-        TextView tvName,tvPrice;
+        TextView titleName,description, studio;
+        ImageView imageView;
     }
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-
         ViewHolder holder = null;
-
         if (convertView == null) {
-
             holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.row, null);
-            holder.llContainer = (LinearLayout)convertView.findViewById(R.id.llContainer);
-            holder.tvName = (TextView) convertView.findViewById(R.id.tvName);
-            holder.tvPrice = (TextView) convertView.findViewById(R.id.tvPrice);
+            holder.llContainer = (LinearLayout)convertView.findViewById(R.id.row_id);
+            holder.titleName = (TextView) convertView.findViewById(R.id.title_name);
+            holder.description = (TextView) convertView.findViewById(R.id.description);
+            holder.studio = (TextView) convertView.findViewById(R.id.studio);
+            holder.imageView = (ImageView) convertView.findViewById(R.id.thumbnail);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.tvName.setText(mDisplayedValues.get(position).getTitle());
-        holder.tvPrice.setText(mDisplayedValues.get(position).getQuantity());
-
+        holder.titleName.setText(mDisplayedValues.get(position).getTitle());
+        holder.description.setText(mDisplayedValues.get(position).getDescription());
+        holder.studio.setText(mDisplayedValues.get(position).getQuantity());
+        Glide.with(inflater.getContext()).load(mDisplayedValues.get(position).getThumbnail()).into(holder.imageView);
         holder.llContainer.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
-               // Toast.makeText(BookSearchActivity.this, mDisplayedValues.get(position).name, Toast.LENGTH_SHORT).show();
+                Book book = (Book) mDisplayedValues.get(position);
+                Intent intent = new Intent(inflater.getContext(), BookViewOrEditActivity.class);
+                intent.putExtra("book",book);
+                inflater.getContext().startActivity(intent);
             }
         });
 

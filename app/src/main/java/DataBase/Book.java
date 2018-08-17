@@ -1,6 +1,5 @@
 package DataBase;
 
-import android.os.Parcelable;
 
 import java.io.Serializable;
 

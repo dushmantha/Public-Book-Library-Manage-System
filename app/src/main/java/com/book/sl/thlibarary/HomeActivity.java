@@ -104,6 +104,15 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu); //your file name
+        LocalDataManager localDataManager = new LocalDataManager();
+        if (localDataManager.getUserObject(this) != null){
+            if (localDataManager.getUserObject(this).isAdministrator()){
+                menu.findItem(R.id.menu_list).setTitle("SHOW NOTIFICATION");
+            }else {
+                menu.findItem(R.id.menu_list).setTitle("MY HISTORY");
+            }
+        }
+
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -112,7 +121,9 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
 
         if (item.getItemId()==R.id.menu_list){
 
-
+            Intent intent = new Intent(this, ListShowActivity.class);
+            intent.putExtra("books", (Serializable) lstBook);
+            startActivity(intent);
         }
 
         if (item.getItemId()==R.id.menu_search){
@@ -124,9 +135,7 @@ public class HomeActivity extends AppCompatActivity implements SearchView.OnQuer
 
                 }else {
                     Intent intent = new Intent(this, BookSearchActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putParcelable("books", lstBook);
-                    intent.putExtras(bundle);
+                    intent.putExtra("books", (Serializable) lstBook);
                     startActivity(intent);
                 }
             }

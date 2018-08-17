@@ -6,10 +6,10 @@
 		android:id="@+id/menu_search"
 		android:icon="@drawable/search"
 		android:orderInCategory="100"
-		android:title="Search" />
+		android:title="SEARCH" />
 	<item
 		android:id="@+id/menu_list"
-		android:title="List"
+		android:title="LIST"
 		android:icon="@drawable/notification"
 		android:orderInCategory="101"
 		app:showAsAction="never"/>
